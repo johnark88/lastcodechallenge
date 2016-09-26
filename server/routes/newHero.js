@@ -1,14 +1,15 @@
 var express = require('express');
 var router = express.Router();
 
-var hero = require('../../models/heroModel');
+var heroModel = require('../../models/heroModel');
 
 router.post('/', function(req,res){
 console.log('in router.post New Hero!');
-console.log(req.body);
+console.log(req.body,'asdasdasdasdasdasdasdasdasdasdasd');
+
 var hero = req.body;
 
-var newHero = new hero({
+var newHero = new heroModel({
     alias: hero.alias,
     first_name: hero.first_name,
     last_name: hero.last_name,

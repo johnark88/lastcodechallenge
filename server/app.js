@@ -20,7 +20,7 @@ app.use('/getheros', heros);
 
 //add new hero router
 var newHero = require('./routes/newHero');
-app.use('/newhero', newHero);
+app.use('/newHero', newHero);
 
 //json body parser
 app.use(bodyParser.json());

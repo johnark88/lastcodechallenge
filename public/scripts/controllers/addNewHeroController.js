@@ -9,10 +9,11 @@ myApp.controller('addNewHeroController',['$scope','$http',function($scope,$http)
         city:$scope.heroCity,
         power_name:$scope.heroPName
     };//end newhero object
+console.log(newHero, 'hero to send');
 
 $http ({
   method: 'POST',
-  url: '/newhero',
+  url: '/newHero',
   data: newHero
 }).then(function(response){
   console.log(response, 'from server');
