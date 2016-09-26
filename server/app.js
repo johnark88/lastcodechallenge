@@ -25,18 +25,10 @@ var hero = require('../models/heroModel');
 app.post('/newHero', function(req,res){
 console.log('in router.post New Hero!');
 //req.body keeps coming back undefined!  ! ! ! !  ! ! ! ! ! !! ! ! ! ! !
-var heroModel = req.body;
+var heroModel = hero(req.body);
 console.log(heroModel,'asdasdasdasdasdasdasdasdasdasdasd');
 
-var newHero = new hero({
-    alias: hero.alias,
-    first_name: hero.first_name,
-    last_name: hero.last_name,
-    city: hero.city,
-    power_name: hero.power_name
-  });
-
-newHero.save(function(err){
+heroModel.save(function(err){
   if (err) {
     console.log(err);
     res.sendStatus(500);
