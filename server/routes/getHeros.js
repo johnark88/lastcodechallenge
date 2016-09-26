@@ -8,10 +8,10 @@ console.log('in get all route');
 hero.find({}, function(err, heroResults){
 if (err) {
   console.log(err);
-  res.sendStatus(500);
+  
 }else {
   console.log('Connected to the heroDB!!!');
-  res.sendStatus(200);
+
 console.log(heroResults,'HEROS!!');
 res.send(heroResults);
 }//end else

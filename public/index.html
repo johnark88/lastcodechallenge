@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="myApp">
   <head>
     <meta charset="utf-8">
     <script src="vendors/angular.min.js" charset="utf-8"></script>
@@ -7,13 +7,16 @@
     <script src="scripts/clientside.js" charset="utf-8"></script>
     <script src="scripts/controllers/addNewHeroController.js" charset="utf-8"></script>
     <script src="scripts/controllers/homeController.js" charset="utf-8"></script>
-    
+
     <title>Last Code Challenge</title>
   </head>
-  <body>
+  <body >
+    <div ng-controller="basicHome"></div>
+
     This is simply a test of the emergancy broadcast system......
 
     <ul>
+      <li><a href="#home"> Home </a></li>
       <li><a href="#add">Add a new hero</a></li>
     </ul>
 
