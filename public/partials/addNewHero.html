@@ -1,0 +1,12 @@
+<p>
+  You can add a hero here
+</p>
+<div ng-controller="addNewHeroController"></div>
+<form class="addingNewHero" name="addingNewHero">
+        <input type="text" ng-model="heroAlias" placeholder="Alias" >
+        <input type="text" ng-model="heroFName" placeholder="First Name" >
+        <input type="text" ng-model="heroLName" placeholder="Last Name" >
+        <input type="text" ng-model="heroCity" placeholder="City ">
+        <input type="text" ng-model="neroPName" placeholder="Power Name">
+        <button type="button" ng-click="addNewPet()" > add </button>
+      </form>
