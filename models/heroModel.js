@@ -2,11 +2,11 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var heroSchema = new Schema({
-  alias: {type: String, },
-  first_name:{type: String, },
-  last_name: {type: String,},
-  city: {type: String},
-  power_name: {type: String}
+  alias: String,
+  first_name: String,
+  last_name: String,
+  city: String,
+  power_name: String
 });
 
 var heroModel = mongoose.model('heros', heroSchema);

@@ -14,9 +14,13 @@ mongoose.connect(mongoURI);
 var index = require('./routes/index');
 app.use('/', index);
 
-//heros router
-var heros = require('./routes/heros');
-app.use('/', heros);
+//get heros router
+var heros = require('./routes/getHeros');
+app.use('/getheros', heros);
+
+//add new hero router
+var newHero = require('./routes/newHero');
+app.use('/newhero', newHero);
 
 //json body parser
 app.use(bodyParser.json());

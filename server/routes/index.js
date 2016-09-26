@@ -6,7 +6,6 @@ var express =require('express');
 router.get("/", function(req,res){
     console.log("Here is the property: ", req.params);
     res.sendFile(path.join(__dirname, "../../public/index.html"));
-
 });
 
 
