@@ -5,7 +5,8 @@ var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 var urlencodedParser = bodyParser.urlencoded( { extended: true } );
 var portDecision = process.env.PORT || 4242;
-
+//json body parser
+app.use(bodyParser.json());
 //data base connection
 var mongoURI = "mongodb://localhost:27017/superheroDB";
 mongoose.connect(mongoURI);
@@ -19,11 +20,34 @@ var heros = require('./routes/getHeros');
 app.use('/getheros', heros);
 
 //add new hero router
-var newHero = require('./routes/newHero');
-app.use('/newHero', newHero);
 
-//json body parser
-app.use(bodyParser.json());
+var hero = require('../models/heroModel');
+app.post('/newHero', function(req,res){
+console.log('in router.post New Hero!');
+//req.body keeps coming back undefined!  ! ! ! !  ! ! ! ! ! !! ! ! ! ! !
+var heroModel = req.body;
+console.log(heroModel,'asdasdasdasdasdasdasdasdasdasdasd');
+
+var newHero = new hero({
+    alias: hero.alias,
+    first_name: hero.first_name,
+    last_name: hero.last_name,
+    city: hero.city,
+    power_name: hero.power_name
+  });
+
+newHero.save(function(err){
+  if (err) {
+    console.log(err);
+    res.sendStatus(500);
+  }else {
+    console.log('connected to DB ');
+    res.sendStatus(201);
+  }
+});
+});
+
+
 
 //app.listen for port #
 app.listen(portDecision, function(){
