@@ -6,7 +6,7 @@ myApp.controller('homeController',['$scope','$http',function($scope,$http){
     method: 'GET',
     url: '/getheros'
   }).then(function(response){
-    $scope.allHeros = response;
+    $scope.allHeros = response.data;
     console.log($scope.allHeros);
   });
 
